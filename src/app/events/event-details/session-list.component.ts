@@ -8,6 +8,8 @@ import { ISession } from '../shared';
 
 export class SessionListComponent implements OnInit {
   @Input() sessions: ISession[];
+  @Input() filterBy: string;
+  
   constructor() { }
 
   ngOnInit() { }
