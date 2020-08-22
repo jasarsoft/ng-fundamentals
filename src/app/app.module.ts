@@ -12,7 +12,8 @@ import {
   SessionListComponent,
   CreateSessionComponent,
   UpvoteComponent,
-  DurationPipe
+  DurationPipe,
+  VoterService
 } from './events/index';
 
 import { NavBarComponent } from './nav/navbar.component';
@@ -59,6 +60,7 @@ let jQuery = window['$'];
     EventListResolver,
     { provide: EventRouteActivator, useClass: EventRouteActivator},
     AuthService,
+    VoterService,
     {
       provide: 'canDeactivateCreateEvent',
       useValue: checkDirtyState
