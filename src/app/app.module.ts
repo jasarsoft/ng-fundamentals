@@ -26,6 +26,7 @@ import { EventsAppComponent } from './events-app.component';
 import { AuthService } from './user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 let toastr: Toastr;
 let jQuery = window['$'];
@@ -36,7 +37,8 @@ let jQuery = window['$'];
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
   declarations: [
     EventsAppComponent,
