@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from "@angular/core";
 import { of } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import { catchError, subscribeOn, tap } from 'rxjs/operators';
 import { IUser } from './user.model';
 
 @Injectable()
@@ -25,6 +25,16 @@ export class AuthService {
 
   isAuthenticated() {
     return !!this.currentUser;
+  }
+
+  checkAuthenticationStatus() {
+    this.http.get('/api/currentIdentity')
+      .pipe( tap(data => {
+        if (data instanceof Object) {
+          this.currentUser = data as IUser;
+        }
+      }))
+      .subscribe();
   }
 
   updateCurrentUser(firstName: string, lastName: string) {
