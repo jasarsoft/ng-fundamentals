@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o --proxy-config proxy.conf.json",
-    "build": "ng build",
-    "test": "ng test --sourcemaps=false",
+    "build": "ng build --sourcemaps=false",
+    "test": "ng test ",
     "lint": "ng lint",
     "server": "node node_modules/ngf-server/server.js",
     "e2e": "ng e2e"
