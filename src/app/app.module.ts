@@ -19,7 +19,7 @@ import {
 
 import { NavBarComponent } from './nav/navbar.component';
 import { TOASTR_TOKEN, Toastr, JQ_TOKEN, CollapsibleWellComponent, SimpleModalComponent, ModalTriggerDirective } from './common/index';
-import { RouterModule } from '@angular/router';
+import { PreloadAllModules, RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { Error404Component } from './errors/404.component';
 import { EventsAppComponent } from './events-app.component';
@@ -37,7 +37,7 @@ let jQuery = window['$'];
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, {preloadingStrategy: PreloadAllModules}),
     HttpClientModule
   ],
   declarations: [
