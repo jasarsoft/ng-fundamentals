@@ -1,5 +1,6 @@
 import { DebugElement } from '@angular/core'
 import { ComponentFixture, TestBed, async } from "@angular/core/testing"
+import { By } from '@angular/platform-browser';
 import { CollapsibleWellComponent } from 'src/app/common';
 import { AuthService } from 'src/app/user/auth.service';
 import { DurationPipe } from '../shared';
@@ -56,6 +57,7 @@ describe('SessionListComponent', () => {
       fixture.detectChanges();
 
       expect(element.querySelector('[well-title]').textContent).toContain('Session 1');
+      expect(debugEl.query(By.css('[well-title]')).nativeElement.textContent).toContain('Session 1');
     });
   })
 })
