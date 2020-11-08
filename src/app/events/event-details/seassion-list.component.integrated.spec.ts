@@ -1,4 +1,4 @@
-import { DebugElement } from '@angular/core'
+import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core'
 import { ComponentFixture, TestBed, async } from "@angular/core/testing"
 import { By } from '@angular/platform-browser';
 import { CollapsibleWellComponent } from 'src/app/common';
@@ -27,15 +27,17 @@ describe('SessionListComponent', () => {
       imports: [],
       declarations: [
         SessionListComponent,
-        UpvoteComponent,
+        // UpvoteComponent,
         DurationPipe,
-        CollapsibleWellComponent
+        // CollapsibleWellComponent
       ],
       providers: [
         { provide: AuthService, useValue: mockAuthService },
         { provide: VoterService, useValue: mockVoterService }
       ],
-      schemas: []
+      schemas: [
+        NO_ERRORS_SCHEMA
+      ]
     });
   }));
 
